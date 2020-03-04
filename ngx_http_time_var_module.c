@@ -186,7 +186,7 @@ ngx_http_time_tomsec_variable(ngx_http_request_t *r,
     if (p == NULL) {
         return NGX_ERROR;
     }
-    v->len = ngx_sprintf(p, "%T.%03M", tp->sec, tp->msec) - p;
+    v->len = ngx_sprintf(p, "%T%03M", tp->sec, tp->msec) - p;
     v->valid = 1;
     v->no_cacheable = 0;
     v->not_found = 0;
